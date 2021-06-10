@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Todolist_App.Models;
+
 
 namespace Todolist_App
 {
@@ -24,6 +27,14 @@ namespace Todolist_App
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            //Consigurar la cadena de conexion 
+            /*
+               services.AddDbContext<NombredelcontextoBDD>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("Nombre_cadena_conexion")));
+             */
+            services.AddDbContext<TodolistContext>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -50,6 +61,8 @@ namespace Todolist_App
             {
                 endpoints.MapControllerRoute(
                     name: "default",
+                    //pattern: "{controller=Home}/{action=Index}/{id?}");
+                    //direje al controlador
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
         }

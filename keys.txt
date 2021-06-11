@@ -1,0 +1,50 @@
+1. creacion de proyectos
+
+2. nuget de sqlserver
+
+Tools > Nutger manager > nuget packages manager for solucions
+* sqlserver > Entity framework core > install
+* tools > Entity framework core tools > install
+
+3. capam odelo
+
+crear caperta Infrastructure > crear clase > : DbContext > using EFC > constructor > lista de clase
+
+4. startup.cs
+
+método ConfigureServices >>>
+services.AddDbContext<TodoContext>(options => options.UseSqlServer(
+                Configuration.GetConnectionString("TodoContext")));
+
+5. conecion
+appsettions.json > agregar cadena de conexion
+
+6. consol
+Tools > Nutger Manager > Nuget Console
+Add-Migration InitialCreate
+Update-Database
+
+-------------------
+Pertimit  la edicion despues de la creacion de tablas 
+SqlServer
+Tools> OPtions > Designers > desmarcar prevvent saving changes that requiere re-creating
+
+Tools > Nutger manager > nuget packages manager for solucions
+* sqlserver > Entity framework core sql server> install
+* tools > Entity framework core tools > install
+
+agregar a appconfig cadena
+
+en startup.cs en servicio agregar configuracion de la conexcion 
+
+Consola de Nuget
+Scaffold-DbContext "Server=localhost;Database=Todolist;Trusted_Connection=True"; Microosft.EntityFrameworkCore.SqlServer -Output Models
+
+Consola
+add-migration MigracionInicial
+update-database
+
+CEAR CONTROLADORES
+
+C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\Views\Todolist\Index.cshtml
+

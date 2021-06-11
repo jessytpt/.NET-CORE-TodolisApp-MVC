@@ -44,12 +44,15 @@
                     <tr>
                         <td>@item.IdTarea</td>
                         <td>@item.DescripcionTarea</td>
-                        <td>@item.EstadoTarea </td>
+                        <!--<td>@item.EstadoTarea </td>-->
+                        <td>
+                            @Html.EditorFor(@item.EstadoTarea.GetValueOrDefault())
+                        </td>
                         <td>
                             <a asp-controller="Todolist" asp-action="Edit" asp-route-id="@item.IdTarea" class="btn btn-warning">Editar</a>
                             <a asp-controller="Todolist" asp-action="Delete" asp-route-id="@item.IdTarea" class="btn btn-danger">Eliminar</a>
                             <!-- @Html.ActionLink("Delete","Eliminar",new {id=item.IdTarea} )-->
-                           
+
                         </td>
                     </tr>
                     }

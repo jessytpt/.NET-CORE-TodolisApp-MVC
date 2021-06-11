@@ -145,3 +145,4 @@ C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\bin\De
 C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\bin\Debug\net5.0\runtimes\win-arm\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\bin\Debug\net5.0\runtimes\win-arm64\lib\net5.0\dotnet-aspnet-codegenerator-design.exe
 C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\obj\Debug\net5.0\Razor\Views\Todolist\Index.cshtml.g.cs
+C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\obj\Debug\net5.0\Razor\Views\Todolist\Create.cshtml.g.cs

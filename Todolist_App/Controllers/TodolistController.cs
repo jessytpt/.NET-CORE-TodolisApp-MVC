@@ -16,9 +16,10 @@ namespace Todolist_App.Controllers
             _context = context;
         }
 
-        public string Index()
+        public IActionResult Index()
         {
-            return "test";
+            IEnumerable<Tarea> listaTareas = _context.Tareas;
+            return View(listaTareas);
         }
     }
 }

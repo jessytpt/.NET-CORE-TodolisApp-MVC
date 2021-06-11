@@ -47,4 +47,63 @@ update-database
 CEAR CONTROLADORES
 
 C:\Users\Jessenia-PC\Documents\3.PORTAFOLIO\NET\Todolist_App\Todolist_App\Views\Todolist\Index.cshtml
+BASE DE DATOS
+
+CLAVES FORANEAS
+ALTER TABLE dbo.Factura
+   ADD CONSTRAINT FK_FACTURA_CLIENTE FOREIGN KEY (id_cliente_p)
+      REFERENCES dbo.Cliente (id_cliente)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+;
+
+ALTER TABLE dbo.Detalle_Factura
+   ADD CONSTRAINT FK_DETALLE_FACTURA FOREIGN KEY (id_factura_p)
+      REFERENCES dbo.Factura (id_factura)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+;
+
+ALTER TABLE dbo.Detalle_Factura
+   ADD CONSTRAINT FK_DETALLE_PRODUCTO FOREIGN KEY (id_producto_p)
+      REFERENCES dbo.Producto (id_producto)
+      ON DELETE CASCADE
+      ON UPDATE CASCADE
+;
+
+
+INSERT INTO Cliente VALUES('Juan Pablo Vargas','099884030','Ambato');
+INSERT INTO Cliente VALUES('Miguel Yépez','0998840303','Ibarra');
+INSERT INTO Cliente VALUES('Ying Ying','0998840304','Guayaquil');
+
+INSERT INTO Producto VALUES('Celular A30',200.65);
+INSERT INTO Producto VALUES('Celular A70',300);
+INSERT INTO Producto VALUES('Celular Redmi 7',110);
+INSERT INTO Producto VALUES('Laptop HP i5',700);
+INSERT INTO Producto VALUES('Laptop Huawei i5',900);
+INSERT INTO Producto VALUES('Laptop Asus i5',1200);
+INSERT INTO Producto VALUES('Macbook Pro M1',1900);
+INSERT INTO Producto VALUES('Audífonos Sansung',25.28);
+INSERT INTO Producto VALUES('Audífonos Huawei',18.96);
+INSERT INTO Producto VALUES('Audífonos Xiaomi',13);
+
+--------------------
+
+CADENA DE CONEXION
+
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=Todolist;Trusted_Connection=True"
+  },
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft": "Warning",
+      "Microsoft.Hosting.Lifetime": "Information"
+    }
+  },
+  "AllowedHosts": "*"
+
+}
+
 
